@@ -35,6 +35,6 @@ carregar_livro = () =>{
 }
 
 voltar = () =>{
-    document.location.href='./index.html'
+    document.location.href='../index.html'
 }
 carregar_livro()

@@ -1,3 +1,3 @@
 goto_emprestimo = () =>{
-    document.location.href = 'emprestimo.html'
+    document.location.href = './pages/emprestimo.html'
 }
