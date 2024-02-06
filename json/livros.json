@@ -1,0 +1,17 @@
+[
+    {
+        "book_name": "o amigo",
+        "author_name": "adriana",
+        "book_code": 1
+    },
+    {
+        "book_name": "biblia",
+        "author_name": "varios",
+        "book_code": 2
+    },
+    {
+        "book_name": "iot",
+        "author_name":"não sei",
+        "book_code":3
+    }
+]

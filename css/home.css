@@ -1,0 +1,39 @@
+button, h1{
+    font-family: monospace;
+}
+html body{
+    height: 100%;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+h1{
+    font-size: 5em;
+    margin-top: 0.5em;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1em;
+}
+.card{
+    margin-top: 5em;
+    text-align: center;
+    display: flex;
+    background-color: wheat;
+    padding: 3em;
+}
+button{
+    border: 0.1em solid black;
+    padding: 1em;
+    font-size: 2em;
+    width: 20em;
+    background-color: whitesmoke;
+}
+button:active{
+    background-color: rgb(197, 197, 197);
+}
