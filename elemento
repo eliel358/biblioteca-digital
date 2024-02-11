@@ -1,0 +1,7 @@
+<div class="livro">
+  <p id="book-name">o amigo</p>
+  <p id="author">adriana</p>
+  <p id="book-code">1</p>
+  <p id="book-status">Devolução pendente</p>
+  <p id="loan-date">01/02/2024</p>
+</div>

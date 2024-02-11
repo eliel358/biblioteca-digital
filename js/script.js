@@ -1,4 +1,5 @@
 livros = []
+fs.readFileSync()
 class livro{
     constructor(book_name,author_name,book_code){
         this.book_name = book_name 
@@ -14,7 +15,5 @@ add_book = (book_name,author_name)=>{
     // livros = JSON.stringify(livros)
     //manda pro arquivo
 }
-add_book('biblia','varios')
-add_book('biblia','varios')
 
 console.log(livros)
