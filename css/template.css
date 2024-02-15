@@ -1,0 +1,103 @@
+html, body,.conteiner{
+  height: 100%;
+}
+nav{
+  display: flex;
+  padding: 0.5em;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+h1,button, p{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+h1{
+  padding: 1em;
+  font-size: 5em;
+}
+p{
+  font-size: 2em;
+}
+input,button, select{
+  font-size: 2em;
+  width: 8em;
+  padding: 0.5em;
+  border-radius: 20px;
+  text-align: center;
+}
+input,select{
+  border: 0;
+  outline: 0;
+  height: 100%;
+}
+.conteiner, .two-factor{
+  border-radius: 20px;
+  padding: 2em;
+  position: absolute;
+  top: 25%;
+  background-color: wheat;
+  width: max-content;
+  height: max-content;
+  display: flex;
+  gap: 2em;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid black;
+}
+.column{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1em;
+  
+}
+.conteiner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+}
+button{
+  background-color: rgb(224, 224, 224);
+}
+button:hover{
+  background-color: rgb(231, 231, 231);
+  cursor: pointer;
+}
+button:active{
+  background-color: rgb(187, 187, 187);
+}
+.two-factor{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5em;
+}
+#two-factor-h1{
+  padding: 0.2em;
+}
+.book-display{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  border-radius: 20px;
+  border: 1px solid black;
+}

@@ -1,59 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca digital</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/home.css">
-    <script src="./js/home.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca digital</title>
+  <script defer src="./js/home.js"></script>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/home.css">
 </head>
 <body>
-    <h1>Biblioteca</h1>
-    <div class="hidden_card" style="display: flex;" id="add_book">
-        <h2>Adicionar livro</h2>
-        <div class="add_inputs">
-            <div class="column">
-                <p>Nome do livro</p>
-                <input type="text"  id="nome_livro">
-            </div>
-            <input type="text"  id="nome_author">
-            <input type="date"  id="data_de_registro">
-            <input type="text"  id="registro"><br>
-        </div>
-        <div class="add_button">
-            <button class="add_button" id="add_button">Adicionar</button>
-            <button onclick="hide_add_book()" class="add_button">voltar</button>
-        </div>
-    </div>
-    <div class="hidden_card" style="display: none;" id="emprestimo_card">
-        <h2>Emprestar livros</h2>
-        <div class="inputs">
-            <input type="date" id="data_emprestimo">
-            <input type="date" id="data_devolução">
-            <input type="text" id="aluno" placeholder="Aluno">
-            <select id="turno">
-                <option value="">Manhã</option>
-                <option value="">Tarde</option>
-                <option value="">Noite</option>
-            </select>
-            <input type="text" id="turma" placeholder="Turma">
-            <input type="text" id="livro" placeholder="Livro">
-            <input type="text" id="registro" placeholder="Registro">
-        </div>
-        <div class="buttons">
-            <button id="emprestar_livro">Emprestar</button>
-            <button onclick="hide_emprestimo()" id="emprestar_livro">Voltar</button>
-        </div>
-    </div>
-    <div class="card">
-        <ul>
-            <li><button onclick="show_add_book()">Adicionar livros</button></li>
-            <li><button>Remover livros</button></li>
-            <li><button onclick="show_emprestimo()">Emprestimo de livros </button></li>
-            <li><button>Devolução de livros</button></li>
-            <li><button>lista de livros</button></li>
-        </ul>
-    </div>
+  <nav>
+    <h1>Biblioteca digital</h1>
+  </nav>
+  <div class="conteiner">
+    <button id="goto_add_book">Adicionar livros</button>
+    <button id="goto_remove_book">Remover livros</button>
+    <button id="goto_loan">Emprestar livros</button>
+    <button id="goto_devolution">Devolução de livros</button>
+    <button id="goto_book_list">Listagem de livros</button>
+  </div>
 </body>
 </html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar livros</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/template.css">
+  <script defer src="../js/loan.js"></script>
+</head>
+<body>
+    <nav>
+      <h1>Emprestar livros</h1>
+    </nav>
+    <div class="conteiner">
+      <div class="row">
+        <div class="column">
+          <p>Nome do livro</p>
+          <input type="text" id="book_name">
+        </div>
+        <div class="column">
+          <p>Registro do livro</p>
+          <input type="text" id="book_register">
+        </div>
+        <div class="column">
+          <p>Autor do livro</p>
+          <input type="text" id="book_author">
+        </div>
+        <div class="column">
+          <p>Aluno</p>
+          <input type="text" id="student_name">
+        </div>
+        <div class="column">
+          <p>Turma do aluno</p>
+          <input type="text" id="student_class">
+        </div>
+        <div class="column">
+          <p>Turno do aluno</p>
+          <select id="student_horary">
+            <option value="Manhã">Manhã</option>
+            <option value="Tarde">tarde</option>
+            <option value="Noite">noite</option>
+
+          </select>
+        </div>
+        <div class="column">
+          <p>Turno do emprestimo</p>
+          <select id="loan_horary">
+            <option value="Manhã">Manhã</option>
+            <option value="Tarde">tarde</option>
+            <option value="Noite">noite</option>
+
+          </select>
+        </div>
+        <div class="column">
+          <p>Data de emprestimo</p>
+          <input type="date" id="loan_date">
+        </div>
+        <div class="column">
+          <p>Data de devolução</p>
+          <input type="date" id="devolution_date">
+        </div>
+      </div>
+      <div class="row">
+        <button id="loan">Emprestar</button>
+        <button id="goto_home">Voltar</button>
+      </div>
+    </div>
+</body>
+</html>
