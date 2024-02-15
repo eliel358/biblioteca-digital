@@ -11,10 +11,13 @@ const createWindow = () => {
     }
   })
   win.maximize()
-  win.loadFile('index.html')
+  win.loadFile('./pages/loan.html')
   win.show()
 }
 app.whenReady().then(() => {
   createWindow()
   
 })
+try {
+  require('electron-reloader')(module)
+} catch (_) {}

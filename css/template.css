@@ -101,3 +101,7 @@ button:active{
   border-radius: 20px;
   border: 1px solid black;
 }
+#required-alert{
+  color: rgb(218, 0, 0);
+  font-size: 1.5em;
+}

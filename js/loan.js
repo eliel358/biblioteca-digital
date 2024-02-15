@@ -19,6 +19,29 @@ document.getElementById('goto_home').addEventListener('click',()=>{
 })
 
 document.getElementById('loan').addEventListener('click',()=>{
+  
+  non_validated = [document.getElementById('book_name'),
+  document.getElementById('book_register'),
+  document.getElementById('book_author'),
+  document.getElementById('student_name'),
+  document.getElementById('student_class'),
+  document.getElementById('student_horary'),
+  document.getElementById('loan_horary'),
+  document.getElementById('loan_date'),
+  document.getElementById('devolution_date')]
+  
+  create_class = true
+  for(i in non_validated){
+    if(non_validated[i].value == ""){
+      required_alert = document.createElement('p')
+      required_alert.innerHTML = 'Campo obrigatório'
+      required_alert.id = 'required-alert'
+      
+      non_validated[i].parentNode.insertBefore(required_alert,non_validated[i].parentNode.childNodes[2])
+    }
+    
+  }
+  console.log(create_class)
   new_book = new book(
     document.getElementById('book_name').value,
     document.getElementById('book_register').value,
@@ -29,9 +52,8 @@ document.getElementById('loan').addEventListener('click',()=>{
     document.getElementById('loan_horary').value,
     document.getElementById('loan_date').value,
     document.getElementById('devolution_date').value
-  )
-  
-  
-  fs.writeFileSync('loan_books.json',JSON.stringify(new_book))
-  console.log(new_book)
-})
+    )
+    
+    // fs.writeFileSync('loan_books.json',JSON.stringify(new_book))
+    console.log(new_book)
+  })
