@@ -13,6 +13,8 @@
     "electron-reloader": "^1.2.3"
   },
   "dependencies": {
-    "electron": "^28.2.3"
+    "electron": "^28.2.3",
+    "google-auth-library": "^9.6.3",
+    "google-spreadsheet": "^4.1.1"
   }
 }
