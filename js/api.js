@@ -62,7 +62,7 @@ const deleteRow = async (target) => {
   
     if(rows[i]['_rawData'][1] === target){
       await rows[i].delete()
-      break
+      return
     }
   }
 };
@@ -74,6 +74,7 @@ const addRow = async (rows) => {
   let sheet = doc.sheetsByIndex[0];
   for (let index = 0; index < rows.length; index++) {
       await sheet.addRow(rows[index]);
+      return
   }
 };
 //ok
@@ -92,6 +93,7 @@ const updateRow = async (register, oldValue, newValue) => {
           if(rows[i]['_rawData'][a] === oldValue){
             rows[i]['_rawData'][a] = newValue
             await rows[i].save();
+            return
           }
         }
       }
