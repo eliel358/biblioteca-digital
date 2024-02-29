@@ -1,5 +1,4 @@
-fs = require('fs')
-
+getRows()
 class book{
   constructor(book_name,register,author,student_name,student_class,student_horary,loan_horary,loan_date,devolution_date){
     this.book_name = book_name
@@ -33,14 +32,15 @@ document.getElementById('loan').addEventListener('click',()=>{
 
   required_alert = false
   
-  for(i in non_validated){
-    if(non_validated[i].value == ""){
-      required_alert = true
-    }
-  }
-  if(required_alert){
-    alert('Atenção, preencha todos os campos para emprestar o livro')
-  }
+  // for(i in non_validated){
+  //   if(non_validated[i].value == ""){
+  //     required_alert = true
+  //   }
+  // }
+  // if(required_alert){
+  //   alert('Atenção, preencha todos os campos para emprestar o livro')
+  // }
+
   if(required_alert == false){
     new_book = new book(
         document.getElementById('book_name').value,
@@ -55,5 +55,6 @@ document.getElementById('loan').addEventListener('click',()=>{
         )
         console.log(new_book)
       }
-      // fs.writeFileSync('loan_books.json',JSON.stringify(new_book))
+      new_book = [new_book]
+      addRow(new_book)
 })
