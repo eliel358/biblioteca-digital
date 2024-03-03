@@ -1,6 +1,32 @@
-getRows()
+GoogleSpreadsheet  = require('google-spreadsheet');
+JWT = require('google-auth-library');
+fs = require('fs')
+const RESPONSES_SHEET_ID = '1v8Dxzze5tIta4GdfzSzfmszmjZVfZWxpKPUF_xUGyT4';
+
+const CREDENTIALS = JSON.parse(fs.readFileSync('./credentials.json'));
+const serviceAccountAuth  = new JWT.JWT({
+  email: CREDENTIALS.client_email,
+  key: CREDENTIALS.private_key,
+  scopes: [
+      'https://www.googleapis.com/auth/spreadsheets',
+  ],
+});
+
+const doc = new GoogleSpreadsheet.GoogleSpreadsheet(RESPONSES_SHEET_ID,serviceAccountAuth)
+
+const addRow = async (rows) => {
+
+  await doc.loadInfo();
+
+  let sheet = doc.sheetsByIndex[0];
+  for (let index = 0; index < rows.length; index++) {
+      await sheet.addRow(rows[index]);
+      return
+  }
+};
+
 class book{
-  constructor(book_name,register,author,student_name,student_class,student_horary,loan_horary,loan_date,devolution_date){
+  constructor(book_name,register,author,student_name,student_class,student_horary,loan_horary,loan_date,devolution_date,status){
     this.book_name = book_name
     this.register = register
     this.author = author
@@ -10,6 +36,7 @@ class book{
     this.loan_horary = loan_horary
     this.loan_date = loan_date
     this.devolution_date = devolution_date
+    this.status = status
   }
 }
 
@@ -51,7 +78,8 @@ document.getElementById('loan').addEventListener('click',()=>{
         document.getElementById('student_horary').value,
         document.getElementById('loan_horary').value,
         document.getElementById('loan_date').value,
-        document.getElementById('devolution_date').value
+        document.getElementById('devolution_date').value,
+        'emprestado'
         )
         console.log(new_book)
       }
