@@ -30,7 +30,7 @@ const createElements = async () => {
     console.log(rows[i]['_rawData'])
     display = document.createElement('div')
     display.className = 'row book-display'
-    document.getElementById('conteiner').appendChild(display)
+    document.getElementById('conteiner').insertBefore(display,document.getElementById('goto_home'))
     console.log(document.getElementById('conteiner'))
     for(e in rows[i]['_rawData']){
       temp = document.createElement('p')
