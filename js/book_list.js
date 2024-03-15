@@ -25,19 +25,17 @@ const createElements = async () => {
   let sheet = doc.sheetsByIndex[0];
 
   let rows = await sheet.getRows();
-  // console.log(rows[0])
   for(i in rows){
-    console.log(rows[i]['_rawData'])
-    display = document.createElement('div')
-    display.className = 'row book-display'
-    document.getElementById('conteiner').insertBefore(display,document.getElementById('goto_home'))
-    console.log(document.getElementById('conteiner'))
+    
+    table_body = document.getElementById('table-body')
+    table_row = document.createElement('tr')
+    table_body.appendChild(table_row)
+    
     for(e in rows[i]['_rawData']){
-      temp = document.createElement('p')
-      temp.innerHTML = rows[i]['_rawData'][e]
-      display.appendChild(temp)
+      table_column = document.createElement('td')
+      table_column.innerHTML = rows[i]['_rawData'][e]
+      table_row.appendChild(table_column)
     }
   }
 };
-
 createElements()
