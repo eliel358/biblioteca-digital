@@ -21,6 +21,7 @@ const addRow = async (rows) => {
   let sheet = doc.sheetsByIndex[0];
   for (let index = 0; index < rows.length; index++) {
       await sheet.addRow(rows[index]);
+      alert("O livro foi adicionado")
       return
   }
 };
@@ -59,14 +60,14 @@ document.getElementById('loan').addEventListener('click',()=>{
 
   required_alert = false
   
-  // for(i in non_validated){
-  //   if(non_validated[i].value == ""){
-  //     required_alert = true
-  //   }
-  // }
-  // if(required_alert){
-  //   alert('Atenção, preencha todos os campos para emprestar o livro')
-  // }
+  for(i in non_validated){
+    if(non_validated[i].value == ""){
+      required_alert = true
+    }
+  }
+  if(required_alert){
+    alert('Atenção, preencha todos os campos para emprestar o livro')
+  }
 
   if(required_alert == false){
     new_book = new book(
