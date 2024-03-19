@@ -11,7 +11,7 @@ const createWindow = () => {
     }
   })
   win.maximize()
-  win.loadFile('./pages/loan.html')
+  win.loadFile('./index.html')
   win.show()
 }
 app.whenReady().then(() => {
