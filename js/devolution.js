@@ -31,6 +31,8 @@ const deleteRow = async (target) => {
       await rows[i].delete()
       alert('O livro "'+rows[i]['_rawData'][0]+'" foi excluido')
       return
+    }else{
+      alert('O livro de registro ' +target+ ' já havia sido devolvido ou não foi encontrado')
     }
   }
 };
