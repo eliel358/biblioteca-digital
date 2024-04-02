@@ -55,7 +55,7 @@ const createTable = async () => {
     newRow.appendChild(buttonConteiner)
     button = document.createElement('button')
     buttonConteiner.appendChild(button)
-    button.innerHTML = 'Emprestar'
+    button.innerHTML = 'Devolução'
     button.className = 'loan-button'
   }
 
