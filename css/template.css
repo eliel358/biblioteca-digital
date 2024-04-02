@@ -105,10 +105,14 @@ button:active{
   color: rgb(218, 0, 0);
   font-size: 1.5em;
 }
+.loan-button{
+  width: fit-content;
+  font-size: 1em;
+}
 table, th,td{
   font-size: 1.2em;
   border: 1px solid black;
   width: fit-content;
-  text-align: left;
+  text-align: center;
   padding: 10px;
 }
