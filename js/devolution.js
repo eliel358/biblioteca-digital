@@ -1,6 +1,6 @@
-document.getElementById('goto_home').addEventListener('click',()=>{
-  document.location.href='../index.html'
-})
+// document.getElementById('goto_home').addEventListener('click',()=>{
+//   document.location.href='../index.html'
+// })
 GoogleSpreadsheet  = require('google-spreadsheet');
 JWT = require('google-auth-library');
 fs = require('fs')
@@ -18,7 +18,7 @@ const serviceAccountAuth  = new JWT.JWT({
 const doc = new GoogleSpreadsheet.GoogleSpreadsheet(RESPONSES_SHEET_ID,serviceAccountAuth)
 
 const updateRow = async (register, oldValue, newValue) => {
-
+  
   await doc.loadInfo();
   register = String(register)
   let sheet = doc.sheetsByIndex[0];
@@ -37,10 +37,35 @@ const updateRow = async (register, oldValue, newValue) => {
     }
   }
 };
-document.getElementById('devolution').addEventListener('click',()=>{
-  if(document.getElementById('register_devolution').value == ''){
-    alert('Atenção, preencha todos os campos para devolver o livro')
+const createTable = async () => {
+  
+  await doc.loadInfo()
+
+  let sheet = doc.sheetsByIndex[0];
+  let rows = await sheet.getRows();
+  for(i in rows){
+    newRow = document.createElement('tr')
+    document.getElementById('table-body').appendChild(newRow)
+    for(a in rows[i]['_rawData']){
+      newCell = document.createElement('td')
+      newRow.appendChild(newCell)
+      newCell.innerHTML = rows[i]['_rawData'][a]
+    }
+    buttonConteiner = document.createElement('td')
+    newRow.appendChild(buttonConteiner)
+    button = document.createElement('button')
+    buttonConteiner.appendChild(button)
+    button.innerHTML = 'Emprestar'
+    button.className = 'loan-button'
   }
-  console.log(document.getElementById('register_devolution').value)
-  updateRow(document.getElementById('register_devolution').value,"Emprestado","Em estoque")
-})
+
+}
+
+createTable()
+// document.getElementById('devolution').addEventListener('click',()=>{
+// if(document.getElementById('register_devolution').value == ''){
+//   alert('Atenção, preencha todos os campos para devolver o livro')
+// }
+// console.log(document.getElementById('register_devolution').value)
+// updateRow(document.getElementById('register_devolution').value,"Emprestado","Em estoque")
+// })
