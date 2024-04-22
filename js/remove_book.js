@@ -18,24 +18,20 @@ document.getElementById('goto_home').addEventListener('click',()=>{
   document.location.href='../index.html'
 })
 
-const createTable = async () => {
+
+document.getElementById('RemoveBook').addEventListener('click',async ()=>{
+  target = String(document.getElementById('RegisterInput').value) 
   await doc.loadInfo();
 
   let sheet = doc.sheetsByIndex[0];
+
   let rows = await sheet.getRows();
   for(i in rows){
-      newRow = document.createElement('tr')
-      document.getElementById('table-body').appendChild(newRow)
-      for(a=0;a<4;a++){
-        newCell = document.createElement('td')
-        newRow.appendChild(newCell)
-        newCell.innerHTML = rows[i]['_rawData'][a]
-      }
-      newCell = document.createElement('td')
-      newRow.appendChild(newCell)
-      buttonRemove = document.createElement('button')
-      buttonRemove.innerHTML = 'Remover'
-      newCell.appendChild(buttonRemove)
+    
+    if(rows[i]['_rawData'][1] === target){
+      await rows[i].delete()
+      return
+    }
   }
-}
-createTable()
+
+})
