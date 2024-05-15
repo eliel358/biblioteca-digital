@@ -3,12 +3,8 @@ JWT = require('google-auth-library');
 fs = require('fs')
 const RESPONSES_SHEET_ID = '1v8Dxzze5tIta4GdfzSzfmszmjZVfZWxpKPUF_xUGyT4';
 
-try{
-  const CREDENTIALS = JSON.parse(fs.readFileSync('./credentials.json'));
-}catch(error){
-  console.error(error)
-  alert(error)
-}
+const CREDENTIALS = JSON.parse(fs.readFileSync('./credentials.json'));
+
 const serviceAccountAuth  = new JWT.JWT({
   email: CREDENTIALS.client_email,
   key: CREDENTIALS.private_key,
