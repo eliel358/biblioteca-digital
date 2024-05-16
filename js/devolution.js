@@ -1,6 +1,6 @@
-// document.getElementById('goto_home').addEventListener('click',()=>{
-//   document.location.href='../index.html'
-// })
+document.getElementById('goto_home').addEventListener('click',()=>{
+  document.location.href='../index.html'
+})
 GoogleSpreadsheet  = require('google-spreadsheet');
 JWT = require('google-auth-library');
 fs = require('fs')
