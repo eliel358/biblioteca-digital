@@ -26,6 +26,7 @@ button{
   transition: all 1s ease;
   padding: 0.5em;
   border-radius: 20px;
+  border: 0.2px solid black;
 }
 .conteiner{
   border-radius: 20px;
@@ -70,7 +71,4 @@ button{
 .body-dark{
   color: white;
   background-color: black;
-}
-.non-border{
-  border: 0;
 }
