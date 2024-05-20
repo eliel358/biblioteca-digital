@@ -12,13 +12,23 @@
     <nav>
       <h1>Remover livros</h1>
     </nav>
-    <div class="conteiner">
+    <div class="conteiner"  style="display: none;" id="remove_confirm">
+      <p>Confirme o livro que você quer remover</p>
+      <p id="book_name">Nome do livro:</p>
+      <p id="book_author">Autor do livro:</p>
+      <p id="book_register">Registro do livro:</p>
+      <div class="row">
+        <button id="RemoveBookConfirm" style="color: red;">Confirmar</button>
+        <button id="go_back">Voltar</button>
+      </div>
+    </div>
+    <div id="remove_book_conteiner" class="conteiner">
       <p>Remover livro por registro</p>
-      <input style="width: fit-content;" id="RegisterInput" type="text" placeholder="Insira o registro do livro">
+      <input style="width: fit-content;" value="" id="RegisterInput" type="text" placeholder="Insira o registro do livro">
       <div class="row">
         <button id="RemoveBook">Remover</button>
         <button id="goto_home">Voltar</button>
       </div>
     </div>
 </body>
-</html>
+</html> 
