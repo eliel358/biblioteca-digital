@@ -44,14 +44,18 @@ document.getElementById('RemoveBook').addEventListener('click',removeBook = asyn
       document.getElementById('book_author').innerHTML = "Autor do livro: " + rows[i]['_rawData'][2]
       alertRequest = false
       document.getElementById('RemoveBookConfirm').addEventListener('click',confirmDeleteBook = async () =>{
-        alert("O livro ("+ rows[i]['_rawData'][0]+") foi removido")
         await rows[i].delete()
+        document.getElementById('remove_book_conteiner').style.display = 'flex'
+        document.getElementById('remove_confirm').style.display = 'none'
+        document.getElementById('RegisterInput').value = ""
+        alert("O livro ("+ rows[i]['_rawData'][0]+") foi removido")
       })
       return
     }else{
       alertRequest = true
     }
   }
+  
   if(alertRequest){
     alert('Este livro não existe ou o registro está incorreto')
   }
