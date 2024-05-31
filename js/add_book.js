@@ -21,13 +21,26 @@ const doc = new GoogleSpreadsheet.GoogleSpreadsheet(RESPONSES_SHEET_ID,serviceAc
 const addBook = async (bookName,bookRegister,bookAuthor) => {
 
   await doc.loadInfo();
-
+  registerisunique = true
   let sheet = doc.sheetsByIndex[0];
-
-  await sheet.addRow([bookName,bookRegister,bookAuthor]); 
-  document.getElementById('bookName').value = document.getElementById('bookRegister').value = document.getElementById('bookAuthor').value = ""
-  msg = "O livro de nome " + bookName + ", registro " + bookRegister + ", e author " + bookAuthor + " foi adicionado"
-  alert(msg)
+  rows = await sheet.getRows()
+  
+  for(i in rows){
+    if(rows[i]["_rawData"][1] == bookRegister){
+      registerisunique = false
+      break
+    }else{
+      registerisunique = true
+    }
+  }
+  if(registerisunique){
+    await sheet.addRow([bookName,bookRegister,bookAuthor]); 
+    document.getElementById('bookName').value = document.getElementById('bookRegister').value = document.getElementById('bookAuthor').value = ""
+    msg = "O livro de nome " + bookName + ", registro " + bookRegister + ", e autor " + bookAuthor + " foi adicionado"
+    alert(msg)
+    return
+  }
+  alert(bookRegister+" é um registro já existente no sistema")
 };
 document.getElementById('addBook').addEventListener('click',()=>{
   addBook(document.getElementById('bookName').value,document.getElementById('bookRegister').value,document.getElementById('bookAuthor').value)
