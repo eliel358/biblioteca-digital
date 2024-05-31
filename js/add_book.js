@@ -25,7 +25,9 @@ const addBook = async (bookName,bookRegister,bookAuthor) => {
   let sheet = doc.sheetsByIndex[0];
 
   await sheet.addRow([bookName,bookRegister,bookAuthor]); 
-  
+  document.getElementById('bookName').value = document.getElementById('bookRegister').value = document.getElementById('bookAuthor').value = ""
+  msg = "O livro de nome " + bookName + ", registro " + bookRegister + ", e author " + bookAuthor + " foi adicionado"
+  alert(msg)
 };
 document.getElementById('addBook').addEventListener('click',()=>{
   addBook(document.getElementById('bookName').value,document.getElementById('bookRegister').value,document.getElementById('bookAuthor').value)
